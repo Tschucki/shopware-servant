@@ -1,40 +1,35 @@
-<a href="https://supportukrainenow.org/"><img src="https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct.svg" width="100%"></a>
-
-------
-
 <p align="center">
-    <img title="Laravel Zero" height="100" src="https://raw.githubusercontent.com/laravel-zero/docs/master/images/logo/laravel-zero-readme.png" />
+    <img title="Shopware Servant" height="100" src=".github/ShopwareServantLogo.png" />
 </p>
 
 <p align="center">
-  <a href="https://github.com/laravel-zero/framework/actions"><img src="https://github.com/laravel-zero/laravel-zero/actions/workflows/tests.yml/badge.svg" alt="Build Status"></img></a>
-  <a href="https://packagist.org/packages/laravel-zero/framework"><img src="https://img.shields.io/packagist/dt/laravel-zero/framework.svg" alt="Total Downloads"></a>
-  <a href="https://packagist.org/packages/laravel-zero/framework"><img src="https://img.shields.io/packagist/v/laravel-zero/framework.svg?label=stable" alt="Latest Stable Version"></a>
   <a href="https://packagist.org/packages/laravel-zero/framework"><img src="https://img.shields.io/packagist/l/laravel-zero/framework.svg" alt="License"></a>
 </p>
 
-<h4> <center>This is a <bold>community project</bold> and not an official Laravel one </center></h4>
+<h4> <center>Shopware Plugin Servant </center></h4>
 
-Laravel Zero was created by [Nuno Maduro](https://github.com/nunomaduro) and [Owen Voke](https://github.com/owenvoke), and is a micro-framework that provides an elegant starting point for your console application. It is an **unofficial** and customized version of Laravel optimized for building command-line applications.
+The Shopware Plugin Servant is a CLI tool to help you create and build Shopware 6 plugins. It is based on the Laravel Zero framework. With the Shopware Plugin Servant you can create a plugin much faster. Currently, it can create CMS-Elements and CMS-Blocks within your existing plugins. More features like adding new entities, services, controllers, and much more is under development.\
+I created this tool to help me create plugins faster, as I found the process of creating plugins in Shopware 6 very time-consuming. I hope this tool can help you as well.
 
-- Built on top of the [Laravel](https://laravel.com) components.
-- Optional installation of Laravel [Eloquent](https://laravel-zero.com/docs/database/), Laravel [Logging](https://laravel-zero.com/docs/logging/) and many others.
-- Supports interactive [menus](https://laravel-zero.com/docs/build-interactive-menus/) and [desktop notifications](https://laravel-zero.com/docs/send-desktop-notifications/) on Linux, Windows & MacOS.
-- Ships with a [Scheduler](https://laravel-zero.com/docs/task-scheduling/) and  a [Standalone Compiler](https://laravel-zero.com/docs/build-a-standalone-application/).
-- Integration with [Collision](https://github.com/nunomaduro/collision) - Beautiful error reporting
+- Create Shopware 6 CMS-Elements automatically.
+- Create Shopware 6 CMS-Blocks automatically
+- Create Shopware 6 Entities automatically (in development)
+- Create Shopware 6 Services automatically (in development)
+- Create Shopware 6 Controllers automatically (in development)
+- Create Shopware 6 Repositories automatically (in development)
+- Create Shopware 6 Migrations automatically (in development)
+- Create Shopware 6 Commands automatically (in development)
 
 ------
 
+## Installation
+
+## Usage
+
 ## Documentation
 
-For full documentation, visit [laravel-zero.com](https://laravel-zero.com/).
-
-## Support the development
-**Do you like this project? Support it by donating**
-
-- PayPal: [Donate](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=66BYDWAT92N6L)
-- Patreon: [Donate](https://www.patreon.com/nunomaduro)
+Under development...
 
 ## License
 
-Laravel Zero is an open-source software licensed under the MIT license.
+Shopware Plugin Servant is an open-source software licensed under the MIT license.
