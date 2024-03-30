@@ -6,6 +6,8 @@
   <a href="https://github.com/Tschucki/shopware-servant/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-AGPL%20v3-blue.svg" alt="License"></a>
 </p>
 
+<img title="Shopware Servant" align="center" height="100%" width="100%" src=".github/Demo.gif" />
+
 <h4> <center>Shopware Plugin Servant </center></h4>
 
 The Shopware Plugin Servant is a CLI tool to help you create and build Shopware 6 plugins. It is based on the Laravel Zero framework. With the Shopware Plugin Servant you can create a plugin much faster. Currently, it can create CMS-Elements and CMS-Blocks within your existing plugins. More features like adding new entities, services, controllers, and much more is under development.\
