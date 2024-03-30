@@ -3,7 +3,7 @@
     "description": "CLI tool to help you create and build Shopware 6 plugins. Creates CMS-Elements & CMS-Blocks",
     "keywords": ["shopware-plugin-servant", "shopware-servant", "shopware", "console", "cli"],
     "type": "project",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "license": "GPL-3.0-or-later",
     "support": {
         "issues": "https://github.com/Tschucki/shopware-servant/issues",

@@ -24,7 +24,31 @@ I created this tool to help me create plugins faster, as I found the process of 
 
 ## Installation
 
+You can install the Shopware Plugin Servant globally via Composer:
+
+```bash
+composer global require tschucki/shopware-servant
+```
+
 ## Usage
+
+After installing the Shopware Plugin Servant, you can use the `sw-servant` command to create a new plugin or add new CMS-Elements and CMS-Blocks to an existing plugin.
+
+### Use Generator
+
+```bash
+sw-servant generate
+```
+
+This command will lead you through the process of adding new CMS-Elements and CMS-Blocks to an existing plugin.
+
+## Updating
+
+You can update the Shopware Plugin Servant via Composer:
+
+```bash
+composer global require tschucki/shopware-servant
+```
 
 ## Documentation
 
