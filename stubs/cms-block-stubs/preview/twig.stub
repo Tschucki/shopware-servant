@@ -1,0 +1,5 @@
+{% block sw_cms_block_$$twigBlockName %}
+    <div>
+        <span>Your generated block: $$blockName</span>
+    </div>
+{% endblock %}

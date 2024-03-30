@@ -1,0 +1,5 @@
+{% block sw_cms_block_$$blockName %}
+    <slot name="default">
+        {% block sw_cms_block_$$blockName_slot_default %}{% endblock %}
+    </slot>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% block cms_block_$$twigBlockName %}
+<div>
+    {% set element = block.slots.getSlot('default') %}
+    <div data-cms-element-id="{{ element.id }}">
+        {% block cms_block_default %}
+            {% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+        {% endblock %}
+    </div>
+</div>
+{% endblock %}
