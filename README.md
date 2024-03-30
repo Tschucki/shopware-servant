@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://packagist.org/packages/laravel-zero/framework"><img src="https://img.shields.io/packagist/l/laravel-zero/framework.svg" alt="License"></a>
+  <a href="https://github.com/Tschucki/shopware-servant/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-AGPL%20v3-blue.svg" alt="License"></a>
 </p>
 
 <h4> <center>Shopware Plugin Servant </center></h4>
@@ -32,4 +32,5 @@ Under development...
 
 ## License
 
-Shopware Plugin Servant is an open-source software licensed under the MIT license.
+Shopware Plugin Servant is an open-source software distributed under the AGPL-3.0 License. See [LICENSE](https://github.com/Tschucki/pr0p0ll/blob/main/LICENSE) for more
+information.
