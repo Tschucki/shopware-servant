@@ -245,7 +245,7 @@ JS;
 
     private function selectPlugin(): void
     {
-        $pluginService = new PluginService($this->argument('shopwareRootPath') ?? 'shopware');
+        $pluginService = new PluginService($this->argument('shopwareRootPath'));
         $cExistingPlugins = $pluginService->getPlugins();
         if ($cExistingPlugins->count() === 0) {
             $this->error('No plugins found in the provided path');

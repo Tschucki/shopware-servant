@@ -5,7 +5,6 @@ namespace App\Commands;
 use App\Resources\ShopwarePlugin;
 use App\Services\Plugins\PluginService;
 use LaravelZero\Framework\Commands\Command;
-
 use function Laravel\Prompts\select;
 
 class GeneratorCommand extends Command
@@ -37,8 +36,12 @@ class GeneratorCommand extends Command
 
     private function selectPlugin(): void
     {
-        $pluginService = new PluginService($this->argument('shopwareRootPath') ?? 'shopware');
+        $pluginService = new PluginService($this->argument('shopwareRootPath'));
         $cExistingPlugins = $pluginService->getPlugins();
+        if ($cExistingPlugins->count() === 0) {
+            $this->error('No plugins found in the provided path');
+            exit(1);
+        }
 
         $sSelectedPlugin = select(
             label: 'Select Plugin',
@@ -48,7 +51,7 @@ class GeneratorCommand extends Command
             hint: 'Select the plugin you want to generate files for',
         );
 
-        $this->selectedPlugin = $cExistingPlugins->first(fn (ShopwarePlugin $plugin) => $plugin->getTitle() === $sSelectedPlugin);
+        $this->selectedPlugin = $cExistingPlugins->first(fn(ShopwarePlugin $plugin) => $plugin->getTitle() === $sSelectedPlugin);
     }
 
     private function selectGenerator(): void
@@ -62,7 +65,7 @@ class GeneratorCommand extends Command
             hint: 'Select the generator you want to use',
         );
 
-        $this->call('make:'.$sSelectedGenerator, [
+        $this->call('make:' . $sSelectedGenerator, [
             'plugin' => $this->selectedPlugin->getTitle(),
             'shopwareRootPath' => $this->argument('shopwareRootPath'),
         ]);
