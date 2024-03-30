@@ -1,18 +1,18 @@
 {
-    "name": "laravel-zero/laravel-zero",
-    "description": "The Laravel Zero Framework.",
-    "keywords": ["framework", "laravel", "laravel zero", "console", "cli"],
-    "homepage": "https://laravel-zero.com",
+    "name": "tschucki/shopware-servant",
+    "description": "CLI tool to help you create and build Shopware 6 plugins. Creates CMS-Elements & CMS-Blocks",
+    "keywords": ["shopware-plugin-servant", "shopware-servant", "shopware", "console", "cli"],
     "type": "project",
-    "license": "MIT",
+    "version": "0.0.1",
+    "license": "GPL-3.0-or-later",
     "support": {
-        "issues": "https://github.com/laravel-zero/laravel-zero/issues",
-        "source": "https://github.com/laravel-zero/laravel-zero"
+        "issues": "https://github.com/Tschucki/shopware-servant/issues",
+        "source": "https://github.com/Tschucki/shopware-servant"
     },
     "authors": [
         {
-            "name": "Nuno Maduro",
-            "email": "enunomaduro@gmail.com"
+            "name": "Marcel Wagner",
+            "email": "info@marcelwagner.dev"
         }
     ],
     "require": {
