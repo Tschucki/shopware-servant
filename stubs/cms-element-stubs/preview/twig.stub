@@ -1,0 +1,5 @@
+{% block sw_cms_element_$$twigBlockName %}
+	<div class="$$twigBlockClassName">
+        <span>Your CMS-Element: $$elementName</span>
+	</div>
+{% endblock %}

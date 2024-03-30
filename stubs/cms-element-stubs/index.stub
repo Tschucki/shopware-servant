@@ -1,0 +1,17 @@
+import './component';
+import './preview';
+import './config';
+
+Shopware.Service('cmsService').registerCmsElement({
+    name: '$$label',
+    label: '$$label',
+    component: 'sw-cms-el-$$twigComponentBlockName',
+    configComponent: 'sw-cms-el-config-$$twigComponentBlockName',
+    previewComponent: 'sw-cms-el-preview-$$twigComponentBlockName',
+    defaultConfig: {
+        defaultField: {
+            source: 'static',
+            value: 'Schnelle Helle ist meine Welle!'
+        }
+    }
+});

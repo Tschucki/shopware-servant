@@ -1,0 +1,6 @@
+{% block element_$$twigBlockName %}
+<div>
+    <span>Your CMS-Element: $$blockName</span>
+    {# {{ element.config.X.value }} #}
+</div>
+{% endblock %}

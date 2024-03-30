@@ -66,7 +66,6 @@ class GeneratorCommand extends Command
 
         $this->call('make:'.$sSelectedGenerator, [
             'plugin' => $this->selectedPlugin->getTitle(),
-            'pluginPath' => $this->selectedPlugin->getPath(),
             'shopwareRootPath' => $this->argument('shopwareRootPath'),
         ]);
     }

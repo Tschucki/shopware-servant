@@ -19,7 +19,7 @@ class MakeCmsBlock extends Command
      *
      * @var string
      */
-    protected $signature = 'make:cms-block {shopwareRootPath} {plugin} {pluginPath}';
+    protected $signature = 'make:cms-block {shopwareRootPath} {plugin}';
 
     /**
      * The description of the command.

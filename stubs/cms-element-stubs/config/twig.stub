@@ -1,0 +1,7 @@
+{% block sw_cms_element_$$twigBlockName %}
+     <sw-text-field
+             v-model:value="element.config.defaultField.value"
+             label="Default Config Field"
+             placeholder="Default Config Field...">
+     </sw-text-field>
+{% endblock %}
