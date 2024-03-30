@@ -58,8 +58,6 @@ class GeneratorCommand extends Command
             options: [
                 'cms-block' => 'CMS-Block',
                 'cms-element' => 'CMS-Element',
-                'controller' => 'Controller',
-                'service' => 'Service',
             ],
             hint: 'Select the generator you want to use',
         );

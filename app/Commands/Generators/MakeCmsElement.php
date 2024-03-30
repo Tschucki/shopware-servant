@@ -49,22 +49,19 @@ class MakeCmsElement extends Command
             );
         }
 
-        $this->createCmsComponentFiles($elementName, $elementPath);
-        $this->createCmsPreviewFiles($elementName, $elementPath);
-        $this->createCmsConfigFiles($elementName, $elementPath);
-        $this->createCmsServiceFile($elementName, $elementPath);
-        $this->createCmsElementStorefrontFiles($elementName);
-        $this->registerCmsModule($elementName);
+        $this->task('Creating component files', fn () => $this->createCmsComponentFiles($elementName, $elementPath));
+        $this->task('Creating preview files', fn () => $this->createCmsPreviewFiles($elementName, $elementPath));
+        $this->task('Creating config files', fn () => $this->createCmsConfigFiles($elementName, $elementPath));
+        $this->task('Creating service file', fn () => $this->createCmsServiceFile($elementName, $elementPath));
+        $this->task('Creating storefront file', fn () => $this->createCmsElementStorefrontFiles($elementName));
+        $this->task('Registering module', fn () => $this->registerCmsModule($elementName));
 
-        $this->newLine();
         $this->newLine();
         $this->info("✅ CMS Element $elementName created successfully");
     }
 
     private function createCmsComponentFiles(string $elementName, string $elementPath): void
     {
-        $this->info("\nCreating CMS Component Files");
-        $bar = $this->output->createProgressBar(3);
 
         $componentPath = $elementPath.'/component';
         if (! File::exists($componentPath)) {
@@ -84,7 +81,6 @@ class MakeCmsElement extends Command
         ];
         $componentIndexJsContent = str_replace(array_keys($componentIndexJsStubVariables), array_values($componentIndexJsStubVariables), $componentIndexJsStub);
         File::put($componentIndexJsPath, $componentIndexJsContent);
-        $bar->advance();
 
         $componentTwigStub = File::get(base_path('stubs/cms-element-stubs/component/twig.stub'));
         $componentTwigStubVariables = [
@@ -94,21 +90,16 @@ class MakeCmsElement extends Command
         ];
         $componentTwigContent = str_replace(array_keys($componentTwigStubVariables), array_values($componentTwigStubVariables), $componentTwigStub);
         File::put($componentTwigPath, $componentTwigContent);
-        $bar->advance();
 
         $componentScssStub = File::get(base_path('stubs/cms-element-stubs/component/scss.stub'));
         $componentScssStubVariables = [];
         $componentScssContent = str_replace(array_keys($componentScssStubVariables), array_values($componentScssStubVariables), $componentScssStub);
         File::put($componentScssPath, $componentScssContent);
-        $bar->advance();
 
-        $bar->finish();
     }
 
     private function createCmsPreviewFiles(string $elementName, string $elementPath): void
     {
-        $this->info("\nCreating CMS Preview Files");
-        $bar = $this->output->createProgressBar(3);
 
         $previewPath = $elementPath.'/preview';
         if (! File::exists($previewPath)) {
@@ -128,7 +119,6 @@ class MakeCmsElement extends Command
         ];
         $componentIndexJsContent = str_replace(array_keys($previewIndexJsStubVariables), array_values($previewIndexJsStubVariables), $previewIndexJsStub);
         File::put($previewIndexJsPath, $componentIndexJsContent);
-        $bar->advance();
 
         $previewTwigStub = File::get(base_path('stubs/cms-element-stubs/preview/twig.stub'));
         $previewTwigStubVariables = [
@@ -138,21 +128,16 @@ class MakeCmsElement extends Command
         ];
         $previewTwigContent = str_replace(array_keys($previewTwigStubVariables), array_values($previewTwigStubVariables), $previewTwigStub);
         File::put($previewTwigPath, $previewTwigContent);
-        $bar->advance();
 
         $previewScssStub = File::get(base_path('stubs/cms-element-stubs/preview/scss.stub'));
         $previewScssStubVariables = [];
         $previewScssContent = str_replace(array_keys($previewScssStubVariables), array_values($previewScssStubVariables), $previewScssStub);
         File::put($previewScssPath, $previewScssContent);
-        $bar->advance();
 
-        $bar->finish();
     }
 
     private function createCmsConfigFiles(string $elementName, string $elementPath): void
     {
-        $this->info("\nCreating CMS Config Files");
-        $bar = $this->output->createProgressBar(2);
 
         $configPath = $elementPath.'/config';
         if (! File::exists($configPath)) {
@@ -171,7 +156,6 @@ class MakeCmsElement extends Command
         ];
         $componentIndexJsContent = str_replace(array_keys($configIndexJsStubVariables), array_values($configIndexJsStubVariables), $configIndexJsStub);
         File::put($configIndexJsPath, $componentIndexJsContent);
-        $bar->advance();
 
         $configTwigStub = File::get(base_path('stubs/cms-element-stubs/config/twig.stub'));
         $configTwigStubVariables = [
@@ -179,15 +163,11 @@ class MakeCmsElement extends Command
         ];
         $configTwigContent = str_replace(array_keys($configTwigStubVariables), array_values($configTwigStubVariables), $configTwigStub);
         File::put($configTwigPath, $configTwigContent);
-        $bar->advance();
 
-        $bar->finish();
     }
 
     private function createCmsServiceFile(string $elementName, string $elementPath): void
     {
-        $this->info("\nCreating CMS Service File");
-        $bar = $this->output->createProgressBar(1);
 
         $serviceIndexJsPath = $elementPath.'/index.js';
 
@@ -198,14 +178,10 @@ class MakeCmsElement extends Command
         ];
         $serviceIndexJsContent = str_replace(array_keys($serviceIndexJsStubVariables), array_values($serviceIndexJsStubVariables), $serviceIndexJsStub);
         File::put($serviceIndexJsPath, $serviceIndexJsContent);
-        $bar->advance();
-        $bar->finish();
     }
 
     private function createCmsElementStorefrontFiles(string $elementName): void
     {
-        $this->info("\nCreating Storefront File");
-        $bar = $this->output->createProgressBar(1);
         $storefrontFolder = $this->selectedPlugin->getPath().'/src/Resources/views/storefront/element';
 
         if (! File::exists($storefrontFolder)) {
@@ -226,14 +202,10 @@ class MakeCmsElement extends Command
             $storefrontContent = str_replace(array_keys($storefrontStubVariables), array_values($storefrontStubVariables), $storefrontStub);
             File::put($storefrontFilePath, $storefrontContent);
         }
-        $bar->advance();
-        $bar->finish();
     }
 
     private function registerCmsModule(string $elementName): void
     {
-        $this->info("\nRegistering CMS Element Module in Plugin");
-        $bar = $this->output->createProgressBar(1);
         $mainJsFolder = $this->selectedPlugin->getPath().'/src/Resources/app/administration/src';
         $mainJsPath = $mainJsFolder.'/main.js';
         $sElementName = Str::kebab(Str::camel($elementName));
@@ -258,8 +230,6 @@ import './module/sw-cms/elements/$sElementName';
 JS;
 
         File::append($mainJsPath, $jsContent);
-        $bar->advance();
-        $bar->finish();
     }
 
     private function setCmsElementName(): void
